@@ -2,6 +2,13 @@
 
 Objective-C NSPredicate, NSExpression parser in Golang. Created for own usage and work.
 
+## Compiling Objective-C and Swift file
+
+Objective-C
+```
+gcc -framework Foundation ./objective-c/example.m
+```
+
 ## Reference
 
 [NSPredicate | Apple Documentation](https://developer.apple.com/documentation/foundation/nspredicate)
