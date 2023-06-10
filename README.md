@@ -12,7 +12,10 @@ gcc -framework Foundation ./objective-c/example.m
 ## The [cd] flags
 
 [c] flag will enable case-insensitive filtering.
-[d] flag will enable diacritic-insensitive filtering. Examples of diacritics include French accent marks, German umlauts and 'sharp s', Spanish 'tilde n'.
+
+[d] flag will enable diacritic-insensitive filtering.
+
+Examples of diacritics include French accent marks, German umlauts and 'sharp s', Spanish 'tilde n'.
 
 e.g.
 
