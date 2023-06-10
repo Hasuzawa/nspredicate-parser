@@ -9,7 +9,22 @@ Objective-C
 gcc -framework Foundation ./objective-c/example.m
 ```
 
-## Reference
+## The [cd] flags
+
+[c] flag will enable case-insensitive filtering.
+[d] flag will enable diacritic-insensitive filtering. Examples of diacritics include French accent marks, German umlauts and 'sharp s', Spanish 'tilde n'.
+
+e.g.
+
+`René Descartes` vs `Rene Descartes`
+
+`Français` vs `Francais`
+
+`reiß` vs `reiss`
+
+`español` vs `espanol`
+
+## Documentation
 
 [NSPredicate | Apple Documentation](https://developer.apple.com/documentation/foundation/nspredicate)
 
@@ -20,3 +35,8 @@ gcc -framework Foundation ./objective-c/example.m
 [token module | Go Standard Library](https://pkg.go.dev/go/token)
 
 [scanner module | Go Standard Library](https://pkg.go.dev/go/scanner)
+
+
+## Reference
+
+[Article by Fluffy.es (Axel)](https://nspredicate.xyz/)
