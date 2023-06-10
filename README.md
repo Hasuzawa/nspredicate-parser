@@ -40,6 +40,10 @@ e.g.
 [scanner module | Go Standard Library](https://pkg.go.dev/go/scanner)
 
 
-## Reference
+## Reference & Article
 
-[Article by Fluffy.es (Axel)](https://nspredicate.xyz/)
+[Article on NSPredicate by Fluffy.es (Axel)](https://nspredicate.xyz/)
+
+[Handwritten Parsers & Lexers in Go by Ben Jonhnson](https://blog.gopheracademy.com/advent-2014/parsers-lexers/)
+
+[SQL parser in Go by Mariano Gappa](https://marianogappa.github.io/software/2019/06/05/lets-build-a-sql-parser-in-go/)
