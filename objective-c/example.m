@@ -18,6 +18,11 @@ int main() {
     NSArray *arr = @[@27, @"hello world", @56.7, @YES];
     NSLog(@"%@", arr);
 
+    id x = nil;
+    NSString *y = NULL;
+    NSLog(@"%@", x);
+    NSLog(@"%@", y);
+
     NSPredicate *p = [NSPredicate predicateWithFormat: @"name LIKE 'Johnson'"];
     NSLog(@"%@", p);
 
