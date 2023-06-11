@@ -76,6 +76,4 @@ const (
 
 	// ,
 	COMMA
-	// .
-	PERIOD
 )

@@ -56,8 +56,6 @@ func (s *Scanner) scanSymbol() (tok token.Token, lit string, err error) {
 		return token.RBRACE, "}", nil
 	case ",":
 		return token.COMMA, ",", nil
-	case ".":
-		return token.PERIOD, ".", nil
 	default:
 		break
 	}
@@ -66,7 +64,7 @@ func (s *Scanner) scanSymbol() (tok token.Token, lit string, err error) {
 
 func IsSymbol(ch rune) bool {
 	switch ch {
-	case '=', '!', '>', '<', '(', ')', '[', ']', '{', '}', ',', '.':
+	case '=', '!', '>', '<', '(', ')', '[', ']', '{', '}', ',':
 		return true
 	default:
 		break
