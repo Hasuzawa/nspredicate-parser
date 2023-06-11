@@ -53,6 +53,9 @@ func (s *Scanner) Scan() (token.Token, string, error) {
 	} else if unicode.IsDigit(ch) || ch == '+' || ch == '-' || ch == '.' {
 		s.unread()
 		return s.scanValue()
+	} else if s.isQuote(ch) {
+		s.unread()
+		return s.scanString()
 	}
 
 	return token.ILLEGAL, "", errors.New("invalid token")

@@ -35,7 +35,7 @@ func TestScanner(t *testing.T) {
 			line: "page __name__ CoUnT _ iron9 i64 DEBUG_MODE _123_",
 			tokens: []token.Token{
 				token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT,
-				token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT,
+				token.WS, token.IDENT, token.WS, token.IDENT,
 			},
 		},
 		{
@@ -53,6 +53,14 @@ func TestScanner(t *testing.T) {
 				token.INT, token.WS, token.INT, token.WS, token.FLOAT, token.WS, token.FLOAT, token.WS, token.FLOAT,
 				token.WS, token.FLOAT, token.WS, token.FLOAT, token.WS, token.INT, token.WS, token.FLOAT, token.WS,
 				token.FLOAT, token.WS, token.FLOAT, token.WS, token.FLOAT,
+			},
+		},
+		{
+			name: "string",
+			line: `"abcdef" "12345" '__dir__' '~p()&#$*(!$)' "\n\t\x\1\2\3\"\'" '\"\'\"|\"\'|'`,
+			tokens: []token.Token{
+				token.STRING, token.WS, token.STRING, token.WS, token.STRING, token.WS, token.STRING, token.WS,
+				token.STRING, token.WS, token.STRING, token.WS, token.STRING,
 			},
 		},
 	} {
