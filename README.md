@@ -44,6 +44,8 @@ e.g.
 
 [scanner module | Go Standard Library](https://pkg.go.dev/go/scanner)
 
+[ast module | Go Standard Library](https://pkg.go.dev/go/ast)
+
 
 ## Reference & Article
 
@@ -54,3 +56,5 @@ e.g.
 [SQL parser in Go by Mariano Gappa](https://marianogappa.github.io/software/2019/06/05/lets-build-a-sql-parser-in-go/)
 
 [NSPredicate by Mattt](https://nshipster.com/nspredicate/)
+
+[Introduction to Abstract Syntax by Arkadiusz Ziobrowski](https://tech.ingrid.com/introduction-ast-golang/)

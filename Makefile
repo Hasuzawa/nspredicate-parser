@@ -11,5 +11,8 @@ run:
 run.swift:
 	swift $(SWIFT_FILE)
 
+test.all:
+	go test ./... -count=1
+
 clean:
 	rm ./$(OC_OUT)
