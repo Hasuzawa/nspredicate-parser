@@ -50,6 +50,9 @@ func (s *Scanner) Scan() (token.Token, string, error) {
 	} else if unicode.IsLetter(ch) || ch == '_' {
 		s.unread()
 		return s.scanAlphabet()
+	} else if unicode.IsDigit(ch) || ch == '+' || ch == '-' || ch == '.' {
+		s.unread()
+		return s.scanValue()
 	}
 
 	return token.ILLEGAL, "", errors.New("invalid token")

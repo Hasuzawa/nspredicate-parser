@@ -46,6 +46,15 @@ func TestScanner(t *testing.T) {
 				token.WS, token.FALSE, token.WS, token.NULL, token.WS, token.NIL,
 			},
 		},
+		{
+			name: "int and float",
+			line: "0 2 3.14 0.75 99. .57 00.0 +3 -7.1 1_234 567_8.9 0.1_234",
+			tokens: []token.Token{
+				token.INT, token.WS, token.INT, token.WS, token.FLOAT, token.WS, token.FLOAT, token.WS, token.FLOAT,
+				token.WS, token.FLOAT, token.WS, token.FLOAT, token.WS, token.INT, token.WS, token.FLOAT, token.WS,
+				token.FLOAT, token.WS, token.FLOAT, token.WS, token.FLOAT,
+			},
+		},
 	} {
 		t.Run(subtest.name, func(t *testing.T) {
 			reader := bufio.NewReader(strings.NewReader(subtest.line))
