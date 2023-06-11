@@ -31,6 +31,13 @@ const (
 	// >= , =>
 	GE
 
+	// string comparison operators
+
+	CONTAINS
+	BEGINSWITH
+	ENDSWITH
+	LIKE
+
 	// logical operators
 
 	// AND

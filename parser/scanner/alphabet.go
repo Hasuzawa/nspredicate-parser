@@ -37,6 +37,7 @@ func (s *Scanner) scanAlphabet() (token.Token, string, error) {
 	}
 
 	v := buf.String()
+
 	switch strings.ToUpper(v) {
 	case "AND":
 		return token.AND, "", nil
@@ -46,6 +47,14 @@ func (s *Scanner) scanAlphabet() (token.Token, string, error) {
 		return token.ALL, "", nil
 	case "ANY":
 		return token.ANY, "", nil
+	case "CONTAINS":
+		return token.CONTAINS, "", nil
+	case "BEGINSWITH":
+		return token.BEGINSWITH, "", nil
+	case "ENDSWITH":
+		return token.ENDSWITH, "", nil
+	case "LIKE":
+		return token.LIKE, "", nil
 	case "TRUE":
 		return token.TRUE, "", nil
 	case "FALSE":

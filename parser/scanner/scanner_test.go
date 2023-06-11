@@ -35,7 +35,7 @@ func TestScanner(t *testing.T) {
 			line: "page __name__ CoUnT _ iron9 i64 DEBUG_MODE _123_",
 			tokens: []token.Token{
 				token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT,
-				token.WS, token.IDENT, token.WS, token.IDENT,
+				token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT,
 			},
 		},
 		{
@@ -44,6 +44,14 @@ func TestScanner(t *testing.T) {
 			tokens: []token.Token{
 				token.AND, token.WS, token.OR, token.WS, token.ALL, token.WS, token.ANY, token.WS, token.TRUE,
 				token.WS, token.FALSE, token.WS, token.NULL, token.WS, token.NIL,
+			},
+		},
+		{
+			name: "string comparison",
+			line: "contains beginswith endswith like CONTAINS BEGINSWITH ENDSWITH LIKE",
+			tokens: []token.Token{
+				token.CONTAINS, token.WS, token.BEGINSWITH, token.WS, token.ENDSWITH, token.WS, token.LIKE, token.WS,
+				token.CONTAINS, token.WS, token.BEGINSWITH, token.WS, token.ENDSWITH, token.WS, token.LIKE,
 			},
 		},
 		{
@@ -60,7 +68,7 @@ func TestScanner(t *testing.T) {
 			line: `"abcdef" "12345" '__dir__' '~p()&#$*(!$)' "\n\t\x\1\2\3\"\'" '\"\'\"|\"\'|'`,
 			tokens: []token.Token{
 				token.STRING, token.WS, token.STRING, token.WS, token.STRING, token.WS, token.STRING, token.WS,
-				token.STRING, token.WS, token.STRING, token.WS, token.STRING,
+				token.STRING, token.WS, token.STRING,
 			},
 		},
 	} {
