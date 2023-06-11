@@ -35,5 +35,5 @@ func (s *Scanner) scanValue() (token.Token, string, error) {
 	} else if _, err := strconv.ParseFloat(v, 32); err == nil {
 		return token.FLOAT, v, nil
 	}
-	return token.ILLEGAL, "", nil
+	return token.ILLEGAL, v, nil
 }

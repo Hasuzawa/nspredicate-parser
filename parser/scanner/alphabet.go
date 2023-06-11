@@ -40,29 +40,29 @@ func (s *Scanner) scanAlphabet() (token.Token, string, error) {
 
 	switch strings.ToUpper(v) {
 	case "AND":
-		return token.AND, "", nil
+		return token.AND, v, nil
 	case "OR":
-		return token.OR, "", nil
+		return token.OR, v, nil
 	case "ALL":
-		return token.ALL, "", nil
+		return token.ALL, v, nil
 	case "ANY":
-		return token.ANY, "", nil
+		return token.ANY, v, nil
 	case "CONTAINS":
-		return token.CONTAINS, "", nil
+		return token.CONTAINS, v, nil
 	case "BEGINSWITH":
-		return token.BEGINSWITH, "", nil
+		return token.BEGINSWITH, v, nil
 	case "ENDSWITH":
-		return token.ENDSWITH, "", nil
+		return token.ENDSWITH, v, nil
 	case "LIKE":
-		return token.LIKE, "", nil
+		return token.LIKE, v, nil
 	case "TRUE":
-		return token.TRUE, "", nil
+		return token.TRUE, v, nil
 	case "FALSE":
-		return token.FALSE, "", nil
+		return token.FALSE, v, nil
 	case "NULL":
-		return token.NULL, "", nil
+		return token.NULL, v, nil
 	case "NIL":
-		return token.NIL, "", nil
+		return token.NIL, v, nil
 	}
 
 	if match := identifierRegex.FindString(v); match != "" {

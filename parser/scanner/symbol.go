@@ -29,37 +29,39 @@ func (s *Scanner) scanSymbol() (tok token.Token, lit string, err error) {
 		break
 	}
 
-	switch strings.ToUpper(buf.String()) {
+	v := buf.String()
+
+	switch strings.ToUpper(v) {
 	case "==", "=":
-		return token.EQL, "==", nil
+		return token.EQL, v, nil
 	case "!=":
-		return token.NEQ, "!=", nil
+		return token.NEQ, v, nil
 	case ">=", "=>":
-		return token.GE, ">=", nil
+		return token.GE, v, nil
 	case "<=", "=<":
-		return token.LE, "<=", nil
+		return token.LE, v, nil
 	case ">":
-		return token.GT, ">", nil
+		return token.GT, v, nil
 	case "<":
-		return token.LT, "<", nil
+		return token.LT, v, nil
 	case "(":
-		return token.LPAREN, "(", nil
+		return token.LPAREN, v, nil
 	case ")":
-		return token.RPAREN, ")", nil
+		return token.RPAREN, v, nil
 	case "[":
-		return token.LBRACK, "[", nil
+		return token.LBRACK, v, nil
 	case "]":
-		return token.RBRACK, "]", nil
+		return token.RBRACK, v, nil
 	case "{":
-		return token.LBRACE, "{", nil
+		return token.LBRACE, v, nil
 	case "}":
-		return token.RBRACE, "}", nil
+		return token.RBRACE, v, nil
 	case ",":
-		return token.COMMA, ",", nil
+		return token.COMMA, v, nil
 	default:
 		break
 	}
-	return token.ILLEGAL, "", err
+	return token.ILLEGAL, v, err
 }
 
 func IsSymbol(ch rune) bool {
