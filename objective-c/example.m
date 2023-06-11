@@ -40,4 +40,11 @@ int main() {
     NSPredicate *p2 = [NSPredicate predicateWithFormat: @"month IN %@", arr2];
     NSLog(@"%@", p2);
 
+    // negate a filter
+
+    NSArray *arr3 = @[@"Spring", @"Winter"];
+    // unlike SQL, NOT IN is a compile error
+    NSPredicate *p3 = [NSPredicate predicateWithFormat: @"NOT (season IN %@)", arr3];
+    NSLog(@"%@", p3);
+
 }
