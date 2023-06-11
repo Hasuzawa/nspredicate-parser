@@ -47,3 +47,5 @@ e.g.
 [Handwritten Parsers & Lexers in Go by Ben Jonhnson](https://blog.gopheracademy.com/advent-2014/parsers-lexers/)
 
 [SQL parser in Go by Mariano Gappa](https://marianogappa.github.io/software/2019/06/05/lets-build-a-sql-parser-in-go/)
+
+[NSPredicate by Mattt](https://nshipster.com/nspredicate/)
