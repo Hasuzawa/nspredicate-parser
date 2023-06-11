@@ -3,7 +3,6 @@ package scanner
 import (
 	"bufio"
 	"errors"
-	"fmt"
 	"unicode"
 
 	"github.com/Hasuzawa/nspredicate-parser/parser/scanner/token"
@@ -37,7 +36,6 @@ func (s *Scanner) unread() error {
 func (s *Scanner) Scan() (token.Token, string, error) {
 	// Read the next rune.
 	ch, err := s.read()
-	fmt.Println(string(ch))
 	if err != nil {
 		return token.EOF, "", err
 	}
@@ -49,6 +47,9 @@ func (s *Scanner) Scan() (token.Token, string, error) {
 	} else if IsSymbol(ch) {
 		s.unread()
 		return s.scanSymbol()
+	} else if unicode.IsLetter(ch) || ch == '_' {
+		s.unread()
+		return s.scanAlphabet()
 	}
 
 	return token.ILLEGAL, "", errors.New("invalid token")

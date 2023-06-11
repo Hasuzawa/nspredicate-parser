@@ -30,6 +30,22 @@ func TestScanner(t *testing.T) {
 				token.LE, token.WS, token.LPAREN, token.WS, token.RPAREN, token.WS, token.LBRACK, token.WS, token.RBRACK,
 				token.WS, token.LBRACE, token.WS, token.RBRACE, token.WS, token.COMMA},
 		},
+		{
+			name: "identifiers",
+			line: "page __name__ CoUnT _ iron9 i64 DEBUG_MODE _123_",
+			tokens: []token.Token{
+				token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT,
+				token.WS, token.IDENT, token.WS, token.IDENT, token.WS, token.IDENT,
+			},
+		},
+		{
+			name: "reserevd keywords",
+			line: "and or all any true false null nil",
+			tokens: []token.Token{
+				token.AND, token.WS, token.OR, token.WS, token.ALL, token.WS, token.ANY, token.WS, token.TRUE,
+				token.WS, token.FALSE, token.WS, token.NULL, token.WS, token.NIL,
+			},
+		},
 	} {
 		t.Run(subtest.name, func(t *testing.T) {
 			reader := bufio.NewReader(strings.NewReader(subtest.line))
