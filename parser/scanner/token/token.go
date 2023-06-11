@@ -10,10 +10,16 @@ const (
 	// identifiers, e.g. variable name
 	IDENT
 
+	// data type
+
+	INT
+	FLOAT
+	STRING
+
 	// operators
 
 	// == , =
-	EQ
+	EQL
 	// !=
 	NEQ
 	// <
@@ -54,6 +60,22 @@ const (
 
 	// symbols
 
+	// (
+	LPAREN
+	// [
+	LBRACK
+	// {
+	LBRACE
+
+	// )
+	RPAREN
+	// ]
+	RBRACK
+	// }
+	RBRACE
+
 	// ,
 	COMMA
+	// .
+	PERIOD
 )
