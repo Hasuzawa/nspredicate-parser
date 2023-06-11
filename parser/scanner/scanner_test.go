@@ -71,6 +71,22 @@ func TestScanner(t *testing.T) {
 				token.STRING, token.WS, token.STRING,
 			},
 		},
+		{
+			name: "simple predicate 1",
+			line: `name beginswith 'Mary' and page > 7 `,
+			tokens: []token.Token{
+				token.IDENT, token.WS, token.BEGINSWITH, token.WS, token.STRING, token.WS, token.AND, token.WS,
+				token.IDENT, token.WS, token.GT, token.WS, token.INT, token.WS,
+			},
+		},
+		{
+			name: "simple predicate 2",
+			line: `DEBUG == true OR __dir__ contains[cd] "staticasset"`,
+			tokens: []token.Token{
+				token.IDENT, token.WS, token.EQL, token.WS, token.TRUE, token.WS, token.OR, token.WS,
+				token.IDENT, token.WS, token.CONTAINS, token.LBRACK, token.IDENT, token.RBRACK, token.WS, token.STRING,
+			},
+		},
 	} {
 		t.Run(subtest.name, func(t *testing.T) {
 			reader := bufio.NewReader(strings.NewReader(subtest.line))
