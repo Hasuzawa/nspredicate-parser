@@ -26,7 +26,7 @@ func (o Operator) String() string {
 		flg += FlgDiacriticInsensitive
 	}
 	if len(flg) == 0 {
-		return o.Token.String()
+		return o.Token.Literal()
 	}
-	return fmt.Sprintf("%s[%s]", o.Token.String(), flg)
+	return fmt.Sprintf("%s[%s]", o.Token.Literal(), flg)
 }

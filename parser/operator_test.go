@@ -18,53 +18,53 @@ func TestOperator(t *testing.T) {
 		{
 			name: "== operator",
 			operator: parser.Operator{
-				Token: token.EQ,
+				Token: token.EQL,
 			},
 			expected: "==",
 		},
 		{
 			name: "!= operator",
 			operator: parser.Operator{
-				Token: parser.NEQ,
+				Token: token.NEQ,
 			},
 			expected: "!=",
 		},
 		{
 			name: "contains[cd] operator",
 			operator: parser.Operator{
-				Token:                parser.CONTAINS,
+				Token:                token.CONTAINS,
 				CaseInsensitive:      true,
 				DiacriticInsensitive: true,
 			},
-			expected: "CONTAINS[cd]",
+			expected: "contains[cd]",
 		},
 		{
 			name: "and operator",
 			operator: parser.Operator{
-				Token: parser.AND,
+				Token: token.AND,
 			},
-			expected: "AND",
+			expected: "and",
 		},
 		{
 			name: "beginswith operator",
 			operator: parser.Operator{
-				Token:           parser.BEGINSWITH,
+				Token:           token.BEGINSWITH,
 				CaseInsensitive: true,
 			},
-			expected: "BEGINSWITH[c]",
+			expected: "beginswith[c]",
 		},
 		{
 			name: "like[c] operator",
 			operator: parser.Operator{
-				Token:           parser.LIKE,
+				Token:           token.LIKE,
 				CaseInsensitive: true,
 			},
-			expected: "LIKE[c]",
+			expected: "like[c]",
 		},
 		{
 			name: "==[cd] operator",
 			operator: parser.Operator{
-				Token:                parser.LIKE,
+				Token:                token.EQL,
 				CaseInsensitive:      true,
 				DiacriticInsensitive: true,
 			},
