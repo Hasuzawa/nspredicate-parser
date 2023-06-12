@@ -3,12 +3,12 @@ package parser
 import "github.com/Hasuzawa/nspredicate-parser/internal/version"
 
 const (
-	NAME   = "nspredicate-go"
-	AUTHOR = "Hasuzawa"
+	Name   = "nspredicate_go"
+	Author = "Hasuzawa"
 )
 
 var (
-	VERSION = version.Versioning{
+	Version = version.Versioning{
 		Major: 0,
 		Minor: 1,
 		Patch: 0,
