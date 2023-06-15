@@ -24,10 +24,17 @@ int main() {
 
     // nullish values
 
-    id x = nil;
-    NSString *y = NULL;
-    NSLog(@"%@", x);
-    NSLog(@"%@", y);
+    id nullId = nil;
+    NSLog(@"%@", nullId);
+
+    NSString *nullString = NULL;
+    NSLog(@"%@", nullString);
+
+    Class NullClass = Nil;
+    NSLog(@"%@", NullClass);
+
+    NSNull *nsNull = [NSNull null];
+    NSLog(@"%@", nsNull);
 
     // simple predicate
 
