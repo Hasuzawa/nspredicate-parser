@@ -32,6 +32,24 @@ e.g.
 
 `español` vs `espanol`
 
+## EBNF (Extended Backus-Naur form)
+
+`alphabet = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z" ;`  (omitted for brevity)
+
+`digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;`
+
+`operator = "==" | "=" | "!=" | "<" | "<=" | ">=" | ">" | "beginswith" | "endswith" | "contains" | "matches" ;`
+
+`logical operator = "and" | "or" | "all" | "any" ;`
+
+`special value = "true" | "false" | "YES" | "NO" | "NULL" | "nil" ;`
+
+`blank = " " | "\n" \ "t" | "\r" | "\f" | "\b" ;`
+
+`symbol = "(" | ")" | "[" | "]" | "{" | "}" | "," ;`
+
+`identifier = alphabet , { alphabet | digit | _ } ;`
+
 ## Documentation
 
 [NSPredicate | Apple Documentation](https://developer.apple.com/documentation/foundation/nspredicate)
