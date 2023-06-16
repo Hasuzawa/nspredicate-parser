@@ -48,7 +48,9 @@ e.g.
 
 `symbol = "(" | ")" | "[" | "]" | "{" | "}" | "," ;`
 
-`identifier = alphabet , { alphabet | digit | _ } ;`
+`identifier = { "_" } , alphabet , { alphabet | digit | "_" } ;`
+
+`quotes = "'" | '"' ;`
 
 ## Documentation
 
